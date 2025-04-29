@@ -1,0 +1,19 @@
+{
+  "name": "fgo24-ewallet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "live-server"
+  },
+  "keywords": [
+    "ewallet",
+    "payment",
+    "app"
+  ],
+  "author": "yasirmaxstyle",
+  "license": "MIT",
+  "description": "virtual payment app",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
