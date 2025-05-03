@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Wallet</title>
+    <link rel="stylesheet" href="../../css/pin.css">
+    <link rel="icon" type="image/x-icon" href="../../assets/icons/logo.svg">
+</head>
+
+<body>
+    <main>
+        <section>
+            <div>
+                <div class="logo">
+                    <img src="../../assets/icons/logo.svg" alt="logo-ewallet">
+                    <span>E-Wallet</span>
+                </div>
+                <h1>Enter your PIN 👋</h1>
+                <p class="Copy">We will send new password to your email.</p>
+                <form>
+                    <label for="pin-code">
+                        <input type="text" name="pin-code" class="pin-input" id="pin-code" pattern="[0-9]{6}"
+                            maxlength="6" inputMode="numeric" autocomplete="off" />
+                    </label>
+                    <button>Submit</button>
+                </form>
+                <p class="Copy">Forgot your PIN? <a href="./forgot.html">Reset</a></p>
+            </div>
+        </section>
+        <section>
+            <img src="../../assets/auth/login-illus.svg" alt="payment-illustration">
+        </section>
+    </main>
+</body>
+
+</html>
