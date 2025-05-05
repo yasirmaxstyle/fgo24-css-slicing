@@ -244,6 +244,10 @@ a {
             gap: 12px;
 
             &>p {
+              color: var(--textcolor);
+            }
+
+            &>h3 {
               font-size: min(max(0.75rem, calc(0.75rem + (1.5 - 0.75) * ((100vw - 23.4375rem) / (90 - 23.4375)))), 1.5rem);
             }
 
