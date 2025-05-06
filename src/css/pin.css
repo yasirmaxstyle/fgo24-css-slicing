@@ -31,7 +31,7 @@ main {
     grid-template-columns: 1fr 1fr;
     background-color: var(--maincolor);
 
-    >section:first-child {
+    &>section:first-child {
         min-height: 100vh;
         background-color: var(--subcolor);
         border-radius: 0 5% 5% 0;
