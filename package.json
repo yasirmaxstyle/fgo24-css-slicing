@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "live-server"
+    "dev": "serve --ssl-cert=koda.cer --ssl-key=koda.key"
   },
   "keywords": [
     "ewallet",
@@ -14,6 +14,6 @@
   "license": "MIT",
   "description": "virtual payment app",
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "serve": "^14.2.4"
   }
 }
