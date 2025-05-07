@@ -2,193 +2,193 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 :root {
-    --maincolor: #2948FF;
-    --maingrey: #e8e8e8;
-    --mainblack: #0B132A;
-    --subcolor: #fff;
-    --mainfont: "Montserrat", sans-serif;
-    --subfont: "Nunito", sans-serif;
-    --textcolor: #4F5665;
-    --checked: #00A700
+  --maincolor: #2948FF;
+  --maingrey: #e8e8e8;
+  --mainblack: #0B132A;
+  --subcolor: #fff;
+  --mainfont: "Montserrat", sans-serif;
+  --subfont: "Nunito", sans-serif;
+  --textcolor: #4F5665;
+  --checked: #00A700
 }
 
 /* GLOBAL CONFIG */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: var(--mainfont);
-    min-height: 100vh;
-    width: 100%;
+  font-family: var(--mainfont);
+  min-height: 100vh;
+  width: 100%;
 }
 
 main {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--maincolor);
+
+  >section:first-child {
     min-height: 100vh;
+    background-color: var(--subcolor);
+    border-radius: 0 5% 5% 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: var(--maincolor);
+    align-items: center;
+    width: 100%;
 
-    >section:first-child {
-        min-height: 100vh;
-        background-color: var(--subcolor);
-        border-radius: 0 5% 5% 0;
-        display: grid;
-        align-items: center;
-        width: 100%;
+    &>div {
+      display: grid;
+      padding: min(max(32px, calc(2rem + (108 - 32) * ((100vw - 768px) / (1440 - 768)))), 108px);
+      gap: 16px;
+    }
+  }
 
-        &>div {
-            display: grid;
-            padding: min(max(32px, calc(2rem + (108 - 32) * ((100vw - 768px) / (1440 - 768)))), 108px);
-            gap: 16px;
-        }
+  &>section:last-child {
+    display: flex;
+    align-items: center;
+
+    &>img {
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+
+    &>section:first-child {
+      border-radius: 0;
     }
 
     &>section:last-child {
-        display: flex;
-        align-items: center;
-
-        &>img {
-            object-fit: contain;
-            width: 100%;
-        }
+      display: none;
     }
-
-    @media (max-width: 768px) {
-        grid-template-columns: 1fr;
-
-        &>section:first-child {
-            border-radius: 0;
-        }
-
-        &>section:last-child {
-            display: none;
-        }
-    }
+  }
 }
 
 .button-auth {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
 
-    &>a {
-        text-decoration: none;
+  &>a {
+    text-decoration: none;
 
-        >button {
-            background-color: transparent;
-            border: 1px solid var(--maingrey);
-            color: var(--textcolor);
-            border-radius: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            font-size: 18px;
-            font-weight: 500;
-        }
+    >button {
+      background-color: transparent;
+      border: 1px solid var(--maingrey);
+      color: var(--textcolor);
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-size: 18px;
+      font-weight: 500;
     }
+  }
 
-    @media (max-width: 768px) {
-        grid-template-columns: 1fr 1fr;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr 1fr;
 
-        &>a>button>p {
-            display: none;
-        }
+    &>a>button>p {
+      display: none;
     }
+  }
 }
 
 form {
-    display: grid;
-    gap: 12px;
+  display: grid;
+  gap: 12px;
 
-    &>div {
-        display: flex;
-        align-items: center;
-        background-color: var(--subcolor);
-        border-radius: 10px;
-        border: 1px solid var(--maingrey);
+  &>div {
+    display: flex;
+    align-items: center;
+    background-color: var(--subcolor);
+    border-radius: 10px;
+    border: 1px solid var(--maingrey);
 
-        &>img {
-            margin: 12px;
-        }
+    &>img {
+      margin: 12px;
     }
+  }
 
-    &>button {
-        background-color: var(--maincolor);
-        border-radius: 10px;
-        border: none;
-        color: var(--subcolor);
-        font-weight: 500;
-        font-size: 16px;
-    }
+  .button-blue {
+    background-color: var(--maincolor);
+    border-radius: 10px;
+    border: none;
+    color: var(--subcolor);
+    font-weight: 500;
+    font-size: 16px;
+  }
 }
 
 input {
-    height: 44px;
-    width: 100%;
-    border: none;
-    padding-right: 0 12px;
-    border-radius: 10px;
+  height: 44px;
+  width: 100%;
+  border: none;
+  padding-right: 0 12px;
+  border-radius: 10px;
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 }
 
 input[type="email"] {
-    padding-right: 12px;
+  padding-right: 12px;
 }
 
 button {
-    width: 100%;
-    height: 50px;
+  width: 100%;
+  height: 50px;
 
-    &:hover {
-        cursor: pointer;
-    }
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--maincolor);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--maincolor);
 }
 
 .line {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    &>p {
-        margin: 0 12px;
-        font-size: 12px;
-        color: #aaa;
-    }
+  &>p {
+    margin: 0 12px;
+    font-size: 12px;
+    color: #aaa;
+  }
 
-    &>div {
-        flex-grow: 1;
-        border: 0.1px solid var(--maingrey);
-        height: 0;
-    }
+  &>div {
+    flex-grow: 1;
+    border: 0.1px solid var(--maingrey);
+    height: 0;
+  }
 }
 
 h1 {
-    font-size: min(max(1.125rem, calc(1.125rem + (1.875 - 1.125) * ((100vw - 48rem) / (67.5 - 48)))), 1.875rem);
-    font-weight: 500;
+  font-size: min(max(1.125rem, calc(1.125rem + (1.875 - 1.125) * ((100vw - 48rem) / (67.5 - 48)))), 1.875rem);
+  font-weight: 500;
 }
 
 .Copy {
-    color: var(--textcolor);
-    line-height: min(max(1.375rem, calc(1.375rem + (1.75 - 1.375) * ((100vw - 48rem) / (67.5 - 48)))), 1.75rem);
-    font-size: min(max(0.75rem, calc(0.75rem + (1 - 0.75) * ((100vw - 48rem) / (67.5 - 48)))), 1rem);
+  color: var(--textcolor);
+  line-height: min(max(1.375rem, calc(1.375rem + (1.75 - 1.375) * ((100vw - 48rem) / (67.5 - 48)))), 1.75rem);
+  font-size: min(max(0.75rem, calc(0.75rem + (1 - 0.75) * ((100vw - 48rem) / (67.5 - 48)))), 1rem);
 
-    &:last-child {
-        text-align: center;
-        font-size: 1rem;
-    }
+  &:last-child {
+    text-align: center;
+    font-size: 1rem;
+  }
 }
