@@ -1,24 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-
-:root {
-  --maincolor: #2948FF;
-  --maingrey: #e8e8e8;
-  --mainblack: #0B132A;
-  --subcolor: #fff;
-  --mainfont: "Montserrat", sans-serif;
-  --subfont: "Nunito", sans-serif;
-  --textcolor: #4F5665;
-  --checked: #00A700;
-  --windosWidth: 1280px;
-}
-
-/* GLOBAL CONFIG */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@import url('./global.css');
 
 body {
   font-family: var(--mainfont);
