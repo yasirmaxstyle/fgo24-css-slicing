@@ -21,3 +21,10 @@ const dropdownMenu = document.querySelector('.dropdown-menu')
 burger.addEventListener('click', () => {
   dropdownMenu.classList.toggle('drop')
 })
+
+const newsletter = document.getElementById('newsletter')
+newsletter.addEventListener('submit', (e) => {
+  e.preventDefault()
+  const emailSubs = e.target.email.value
+  window.localStorage.setItem('email-sub', emailSubs)
+})
