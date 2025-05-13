@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard with Tailwind</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="h-[76px] border-b border-gray-300 flex justify-between items-center px-6 shadow-lg">
+      <span>E-Wallet</span>
+      <div class="flex items-center gap-3">
+        <span>Ghaluh Wizard</span>
+        <img class="size-12 bg-black rounded-full" src="" alt="profile">
+      </div>
+    </nav>
+  </header>
+  <section class="flex h-screen gap-6">
+    <aside class="flex flex-col border rounded border-gray-300 p-6 gap-3 basis-xs">
+      <a href="" class="flex gap-3 bg-blue-600 text-white p-3 rounded">
+        <i data-lucide="layout-dashboard"></i>
+        <span>Dashboard</span>
+      </a>
+      <a href="" class="flex gap-3 text-white p-3 rounded ">
+        <i stroke="gray" data-lucide="send"></i>
+        <span class="text-gray-600">Transfer</span>
+      </a>
+      <a href="" class="flex gap-3 text-white p-3 rounded ">
+        <i stroke="gray" data-lucide="clock-fading"></i>
+        <span class="text-gray-600">History</span>
+      </a>
+      <a href="" class="flex gap-3 text-white p-3 rounded ">
+        <i stroke="gray" data-lucide="hand-coins"></i>
+        <span class="text-gray-600">Top Up</span>
+      </a>
+      <a href="" class="flex gap-3 text-white p-3 rounded ">
+        <i stroke="gray" data-lucide="user-pen"></i>
+        <span class="text-gray-600">Profile</span>
+      </a>
+      <a href="" class="flex gap-3 text-white p-3 rounded">
+        <i stroke="red" data-lucide="log-out"></i>
+        <span class="text-red-600">Keluar</span>
+      </a>
+    </aside>
+    <div class="flex-1 flex gap-6 py-6">
+      <div class="flex flex-col gap-6 flex-1">
+        <div class="flex gap-6">
+          <div class="flex-1 border rounded border-gray-300 p-6 flex flex-col gap-3">
+            <div class="flex gap-3">
+              <i data-lucide="wallet"></i>
+              <p>Balance</p>
+            </div>
+            <span class="text-3xl">Rp. 12.000,-</span>
+            <div>
+              &#8623;
+            </div>
+          </div>
+          <div class="flex-1 border rounded border-gray-300 p-6 flex flex-col gap-3">
+            <div class="flex gap-3">
+              <i data-lucide="banknote-arrow-up"></i>
+              <p>Income</p>
+            </div>
+            <span class="text-3xl">Rp. 12.000,-</span>
+          </div>
+          <div class="flex-1 border rounded border-gray-300 p-6 flex flex-col gap-3">
+            <div class="flex gap-3">
+              <i data-lucide="banknote-arrow-down"></i>
+              <p>Expense</p>
+            </div>
+            <span class="text-3xl">Rp. 12.000,-</span>
+          </div>
+        </div>
+        <div class="border rounded border-gray-300 flex justify-between p-6 items-center">
+          <p>Fast Service</p>
+          <div class="flex gap-3">
+            <a href="" class="flex gap-3 text-white rounded border-gray-300 py-3 px-6 bg-blue-600">
+              <i data-lucide="hand-coins"></i>
+              <span>Top Up</span>
+            </a>
+            <a href="" class="flex gap-3 text-white rounded border-gray-300 py-3 px-6 bg-blue-600">
+              <i data-lucide="send"></i>
+              <span>Transfer</span>
+            </a>
+          </div>
+        </div>
+        <div class="border rounded border-gray-300 flex justify-between p-6 items-center">
+          <p>Income Chart</p>
+          <div class="flex gap-3">
+            <select name="" id="" class="rounded py-3 px-6 bg-gray-300">
+              <option value="">7 Days</option>
+            </select>
+            <select name="" id="" class="rounded py-3 px-6 bg-gray-300">
+              <option value="">Income</option>
+            </select>
+          </div>
+        </div>
+        <div class="border border-gray-300 p-6">
+          <canvas id="chart"></canvas>
+        </div>
+      </div>
+      <div class="border border-gray-300 rounded p-3 basis-md">
+        <div class="flex justify-between items-center gap-3">
+          <p>Transaction History</p>
+          <a href="" class="text-xs">See all</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    const chart = document.getElementById('chart')
+    Chart.defaults.backgroundColor = 'oklch(54.6% 0.245 262.881)';
+    new Chart(chart, {
+      type: 'bar',
+      data: {
+        labels: ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+        datasets: [{
+          label: 'Income Chart',
+          data: [12000, 1000, 100000, 28000, 42000, 21000, 17000],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    })
+    lucide.createIcons()
+  </script>
+</body>
+
+</html>
