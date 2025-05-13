@@ -7,10 +7,12 @@
   <title>E-Wallet</title>
   <link rel="stylesheet" href="../../css/auth.css">
   <link rel="icon" type="image/x-icon" href="../../assets/icons/logo.svg">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="../../scripts/auth.js"></script>
 </head>
 
 <body>
-  <main>
+  <main class="RegisterPage">
     <section>
       <div>
         <div class="logo">
@@ -22,17 +24,13 @@
           Desktop, laptop, mobile
           phone? we cover all of that for you!</p>
         <div class="button-auth">
-          <a href="">
-            <button>
-              <img src="../../assets/icons/email.svg" alt="">
-              <p>Sign in with Google</p>
-            </button>
+          <a href="https://google.com/">
+            <img src="../../assets/icons/email.svg" alt="">
+            <span>Sign in with Google</span>
           </a>
-          <a href="">
-            <button>
-              <img src="../../assets/icons/facebook.svg" alt="">
-              <p>Sign in with Facebook</p>
-            </button>
+          <a href="https://facebook.com/">
+            <img src="../../assets/icons/facebook.svg" alt="">
+            <span>Sign in with Facebook</span>
           </a>
         </div>
         <div class="line">
@@ -40,26 +38,38 @@
           <p>Or</p>
           <div></div>
         </div>
-        <form>
+        <form class="FormReg" autocomplete="off">
           <label for="email">Email</label>
           <div>
             <img src="../../assets/auth/email-logo.svg" alt="email-logo">
             <input type="email" name="email" id="email" placeholder="Enter your email">
           </div>
+          <div class="margin">
+            <span class="wrong-email">&#9888; Please enter a valid email address</span>
+          </div>
           <label for="password">Password</label>
           <div>
             <img src="../../assets/auth/password-logo.svg" alt="password-logo">
             <input type="password" name="password" id="password" placeholder="Enter your password">
-            <img src="../../assets/auth/eye-logo.svg" alt="eye-logo">
+            <button type="button">
+              <img src="../../assets/auth/eye-logo.svg" alt="eye-logo">
+            </button>
           </div>
-          <label for="confirm-password">Confirm Password</label>
+          <div class="margin">
+            <span class="wrong-password">&#9888; Password must be at least 8 characters</span>
+          </div>
+          <label for="confirmPassword">Confirm Password</label>
           <div>
             <img src="../../assets/auth/password-logo.svg" alt="password-logo">
-            <input type="password" name="confirm-password" id="confirm-password"
-              placeholder="Enter your password again">
-            <img src="../../assets/auth/eye-logo.svg" alt="eye-logo">
+            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Enter your password again">
+            <button type="button">
+              <img src="../../assets/auth/eye-logo.svg" alt="eye-logo">
+            </button>
           </div>
-          <button class="button-blue">Register</button>
+          <div class="margin">
+            <span class="wrong-password-confirm">&#9888; Password must be the same</span>
+          </div>
+          <button type="submit">Register</button>
         </form>
         <p class="Copy">Have an account? <a href="./login.html">Login</a></p>
       </div>
