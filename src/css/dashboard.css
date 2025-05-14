@@ -61,7 +61,7 @@ nav {
   @media (width <=768px) {
     background-color: var(--maincolor);
 
-    &>div:first-child {
+    &>a:first-child {
       display: none;
     }
 
@@ -205,13 +205,18 @@ section {
 }
 
 .DashboardSection {
-  flex-grow: 1;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  flex: 1;
+  display: flex;
   height: fit-content;
+
+  #chart {
+    width: 100%;
+  }
 
   &>div:first-child {
     display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
     flex-direction: column;
     gap: 12px;
     margin: 12px 24px;
@@ -374,6 +379,8 @@ section {
     border: 1px solid var(--maingrey);
     margin: 12px 24px;
     border-radius: 8px;
+    flex-basis: 375px;
+    flex-shrink: 0;
 
     h4,
     span {
@@ -420,8 +427,8 @@ section {
         var(--subcolor) 100%);
   }
 
-  @media (width <=1080px) {
-    grid-template-columns: 1fr;
+  @media (width <=1440px) {
+    flex-direction: column;
   }
 }
 
@@ -490,6 +497,15 @@ section {
 
       &:nth-child(even) {
         background-color: var(--subcolor);
+      }
+
+      button {
+        background-color: unset;
+        border: none;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       height: 72px;
